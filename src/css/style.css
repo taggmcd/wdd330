@@ -86,9 +86,18 @@ nav {
 .home-grid {
     display: grid;
     justify-items: center;
-    gap: 4rem;
+    gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 2rem;
+}
+
+section {
+    width: 100%;
+    border: --var(accent2-color);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: .25rem;
 }
 
 section h2 {
@@ -102,6 +111,23 @@ section p {
     margin: .5rem;
 }
 
+section a {
+    color: var(--accent1-color);
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: var(--large-font);
+    cursor: pointer;
+}
+
 footer {
     width: 100%;
     display: flex;
@@ -109,4 +135,8 @@ footer {
     align-items: center;
     background-color: var(--primary-color);
     padding: 10px;
+}
+
+.center {
+    text-align: center;
 }
