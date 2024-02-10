@@ -17,7 +17,8 @@ export default class Rover {
     this.photos = this.roverData["total_photos"];
     this.cameras = this.roverData["cameras"];
     this.status = this.roverData["status"];
-    console.log(this.roverData);
+
+    // console.log(this.roverData);
   }
 
   getRoverDetails() {
