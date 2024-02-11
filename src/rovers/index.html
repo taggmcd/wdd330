@@ -4,11 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mars Rover Image Lookup</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Oswald:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-
+    <header>
+        <nav>
+            <div class="nav-link"><a href="/index.html">Home</a></div>
+            <div class="nav-link"><a href="/rovers/index.html">Rovers</a></div>
+            <div class="nav-link"><a href="/about.html">About</a></div>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <form action="" class="rover-select">
+                <div>
+                    <label for="rover">Rover:
+                        <select name="rover" id="rover">
+                            <option value="curiosity">Curiosity</option>
+                            <option value="opportunity">Opportunity</option>
+                            <option value="spirit">Spirit</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="camer">Camera:
+                        <select name="camera" id="camera">
+                            <option value="" selected>Any</option>
+                            <option value="FHAZ">Front Hazard Avoidance Camera</option>
+                            <option value="NAVCAM">Navigation Camera</option>
+                            <option value="MAST">Mast Camera</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label for="earth_date">Date:
+                        <input type="date" id="earth_date" name="earth_date" min="2022-01-01" max="2024-2-10">
+                    </label>
+                </div>
+                <div>
+                    <input type="submit" value="Get Images">
+                </div>
+            </form>
+        </div>
+        <div>
+            <h1 class="center">Rover Name</h1>
+        </div>
+        <div>
+            <p>Launch Date: 11/11/11</p>
+            <p>Landing Date: 11/11/11</p>
+            <p>Status: Active</p>
+            <p>Total Images: Lots</p>
+            <p>Latest Image: 11/11/11</p>
+            <img src="https://mars-photos.herokuapp.com/explore/images/Curiosity_rover.jpg"
+                alt="Image of Rover filled in from API">
+        </div>
+        <div class="rover-grid">
+            <img src="https://mars.nasa.gov/msl-raw-images/msss/03000/mcam/3000ML0156470011005495C00_DXXX.jpg"
+                alt="Placeholder1">
+            <img src="https://mars.nasa.gov/msl-raw-images/msss/03000/mcam/3000ML0156470011005495C00_DXXX.jpg"
+                alt="Placeholder2">
+            <img src="https://mars.nasa.gov/msl-raw-images/msss/03000/mcam/3000ML0156470011005495C00_DXXX.jpg"
+                alt="Placeholder3">
+            <img src="https://mars.nasa.gov/msl-raw-images/msss/03000/mcam/3000ML0156470011005495C00_DXXX.jpg"
+                alt="Placeholder4">
+            <img src="https://mars.nasa.gov/msl-raw-images/msss/03000/mcam/3000ML0156470011005495C00_DXXX.jpg"
+                alt="Placeholder5">
+            <img src="https://mars.nasa.gov/msl-raw-images/msss/03000/mcam/3000ML0156470011005495C00_DXXX.jpg"
+                alt="Placeholder6">
+        </div>
+    </main>
+    <footer>
+        Footer
+    </footer>
+    <script type="module" src="../js/main.js"></script>
 </body>
 
 </html>

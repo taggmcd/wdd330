@@ -140,3 +140,9 @@ footer {
 .center {
     text-align: center;
 }
+
+.rover-select {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
