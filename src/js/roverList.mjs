@@ -10,7 +10,6 @@ export default class RoverList {
   init() {
     getData(`https://mars-photos.herokuapp.com/api/v1/rovers/`, (data) => {
       this.renderList(data.rovers);
-      console.log(data.rovers);
     });
   }
 

@@ -1,32 +1,44 @@
-import { getData } from "./utils";
+import { getData, renderWithTemplate } from "./utils";
 
 // https://mars-photos.herokuapp.com/api/v1/rovers/
 
 export default class Rover {
   constructor(rover) {
     this.rover = rover;
-    this.launchDate;
-    this.landingDate;
-    this.maxSol;
-    this.maxDate;
-    this.photos;
-    this.cameras;
-    this.status;
+    this.roverData = {};
   }
 
   init() {
     getData(
       `https://mars-photos.herokuapp.com/api/v1/rovers/${this.rover}/`,
       (data) => {
-        let roverData = data.rover;
-        this.launchDate = roverData["launch_date"];
-        this.landingDate = roverData["landing_date"];
-        this.maxSol = roverData["max_sol"];
-        this.maxDate = roverData["max_date"];
-        this.photos = roverData["total_photos"];
-        this.cameras = roverData["cameras"];
-        this.status = roverData["status"];
+        this.roverData = data.rover;
+        this.renderRoverDetails("rover-details");
       }
     );
   }
+
+  renderRoverDetails(elementId) {
+    const element = document.getElementById(elementId);
+    element.insertAdjacentHTML(
+      "afterBegin",
+      roverDetailsTemplate(this.roverData)
+    );
+  }
+}
+
+function roverDetailsTemplate(rover) {
+  return `<div class="rover-hero-text">
+  <h1 class="center">${rover.name}</h1>
+  <div>
+      <p>Launch Date: ${rover.launch_date}</p>
+      <p>Landing Date: ${rover.landing_date}</p>
+      <p>Status: ${rover.status}</p>
+      <p>Total Images: ${rover.total_photos}</p>
+      <p>Latest Image: ${rover.max_date}</p>
+  </div>
+</div>
+<div> <img src="https://mars-photos.herokuapp.com/explore/images/${rover.name}_rover.jpg"
+      alt="Image of the ${rover.name} rover">
+</div>`;
 }
