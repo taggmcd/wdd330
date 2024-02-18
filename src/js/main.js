@@ -1,5 +1,9 @@
-import Rover from "./rovers.mjs";
+import Rover from "./rover.mjs";
+import { loadHeader, loadFooter } from "./utils";
 
-let rover = new Rover("Curiosity");
+loadHeader();
+loadFooter();
 
-rover.init();
+let curiosity = new Rover("curiosity");
+
+curiosity.init();
