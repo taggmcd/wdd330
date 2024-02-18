@@ -68,3 +68,11 @@ function setCopyYear() {
   const year = new Date().getFullYear();
   document.getElementById("copy-year").textContent = year;
 }
+
+export function getUrlParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param);
+
+  return product;
+}

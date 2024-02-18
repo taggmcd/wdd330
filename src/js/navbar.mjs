@@ -4,7 +4,6 @@ const about = "/about.html";
 
 export function setActivePage() {
   const currentUrl = window.location.pathname;
-  console.log(currentUrl);
   if (currentUrl === home || currentUrl === "/") {
     document.getElementById("home").classList.add("nav-link-active");
   } else if (currentUrl === rover || currentUrl === "/rover") {
