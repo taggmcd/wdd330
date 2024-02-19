@@ -1,11 +1,31 @@
 import { setActivePage } from "./navbar.mjs";
 
-export function setLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
+export function setLocalStorage(key, data, ttlSeconds = 300) {
+  // localStorage.setItem(key, JSON.stringify(data));
+  const ttl = ttlSeconds * 1000;
+  const now = new Date();
+
+  const item = {
+    data: data,
+    expiry: now.getTime() + ttl,
+  };
+  localStorage.setItem(key, JSON.stringify(item));
 }
 
 export function getLocalStorage(key) {
-  return JSON.parse(localStorage.getItem(key));
+  // return JSON.parse(localStorage.getItem(key));
+  const itemStr = localStorage.getItem(key);
+  if (!itemStr) {
+    return null;
+  }
+  const item = JSON.parse(itemStr);
+  const now = new Date();
+
+  if (now.getTime() > item.expiry) {
+    localStorage.removeItem(key);
+    return null;
+  }
+  return item.data;
 }
 
 export async function getData(url, cb) {

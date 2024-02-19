@@ -1,10 +1,14 @@
-import { getData, renderWithTemplate } from "./utils";
+import { getData } from "./utils";
 
 // https://mars-photos.herokuapp.com/api/v1/rovers/
 
 export default class Rover {
-  constructor(rover) {
-    this.rover = rover;
+  constructor(rover = "Curiosity") {
+    if (rover == null) {
+      this.rover = "Curiosity";
+    } else {
+      this.rover = rover;
+    }
     this.roverData = {};
   }
 
@@ -20,11 +24,21 @@ export default class Rover {
 
   renderRoverDetails(elementId) {
     const element = document.getElementById(elementId);
+    element.innerHTML = "";
     element.insertAdjacentHTML(
       "afterBegin",
       roverDetailsTemplate(this.roverData)
     );
   }
+
+  // getImages(camera, date) {
+  //   getData(
+  //     `https://mars-photos.herokuapp.com/api/v1/rovers/${this.rover}/photos?earth_date=${date}&camera=${camera}`,
+  //     (data) => {
+  //       console.log(data);
+  //     }
+  //   );
+  // }
 }
 
 function roverDetailsTemplate(rover) {

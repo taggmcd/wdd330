@@ -40,7 +40,7 @@ header {
 nav {
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     background-color: var(--primary-color);
     padding: 10px;
@@ -157,6 +157,7 @@ footer {
 
 .rover-hero {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
@@ -165,12 +166,97 @@ footer {
 
 .rover-hero-image {
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    padding: 0 .5rem;
 }
 
 .rover-hero-text {
-    width: 50%;
+    width: 100%;
     padding: 1rem;
     text-align: center;
+}
+
+#rover-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#rover-select label,
+select,
+input {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+}
+
+#rover-images h2 {
+    font-family: var(--font-headline);
+    font-size: var(--large-font);
+    color: var(--accent2-color);
+    text-align: center;
+}
+
+.rover-grid {
+    display: grid;
+    justify-items: center;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 2rem .5rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    nav {
+        justify-content: right;
+    }
+
+    .rover-hero {
+        flex-direction: row;
+    }
+
+    .rover-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .rover-hero-text {
+        width: 50%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    #rover-select {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: end;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    #rover-select label,
+    select,
+    input {
+        display: inline;
+        width: 100%;
+        padding: .5rem;
+    }
+
+    #rover-images h2 {
+        font-family: var(--font-headline);
+        font-size: var(--large-font);
+        color: var(--accent2-color);
+        text-align: center;
+    }
+
+    .rover-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
 }
