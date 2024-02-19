@@ -69,8 +69,7 @@ nav {
 .hero {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 550px;
+    grid-template-rows: repeat(2, 1fr);
     overflow: hidden;
     margin-bottom: 2rem;
 }
@@ -78,16 +77,15 @@ nav {
 .hero-image {
     grid-column: 1 / span 6;
     grid-row: 1/ span 3;
-
 }
 
 .hero-text {
     grid-column: 1 / span 6;
-    grid-row: 3;
+    grid-row: 2;
     z-index: 1;
     text-align: center;
     color: var(--accent1-color);
-    background-color: var(--accent2-color-opaque);
+    background-color: var(--accent2-color);
     contain: content;
 }
 
@@ -95,8 +93,9 @@ nav {
     display: grid;
     justify-items: center;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     margin-bottom: 2rem;
+    padding: .5rem;
 }
 
 section {
@@ -212,6 +211,34 @@ input {
 
     nav {
         justify-content: right;
+    }
+
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 550px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image {
+        grid-column: 1 / span 6;
+        grid-row: 1/ span 3;
+    }
+
+    .hero-text {
+        grid-column: 1 / span 6;
+        grid-row: 3;
+        z-index: 1;
+        text-align: center;
+        color: var(--accent1-color);
+        background-color: var(--accent2-color-opaque);
+        contain: content;
+    }
+
+    .home-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .rover-hero {
