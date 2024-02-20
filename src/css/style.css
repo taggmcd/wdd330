@@ -100,7 +100,7 @@ nav {
 
 section {
     width: 100%;
-    border: --var(accent2-color);
+    border: var(--accent2-color);
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
