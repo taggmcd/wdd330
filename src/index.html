@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars Rover Image Lookup</title>
+    <meta name="description" content="Stanley McDonald WDD 330 Final Project - Rover Home">
+    <meta name="author" content="Tagg McDonald">
+
+    <meta property="og:title" content="Stanley McDonald WDD 330 Final Project - Rover Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taggmcd.netlify.app/">
+    <meta property="og:image" content="https://taggmcd.netlify.app/images/curiosity-sm.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +29,10 @@
             <p>Look at images from the Mars Rovers</p>
         </div>
         <div class="hero-image">
+            <picture>
+                <source media="(max-width: 530px)" srcset="images/curiosity-sm.webp">
+                <img src="images/curiosity-lg.webp" alt="Chamber Meeting" width="960">
+            </picture>
             <img src="images/curiosity.webp"
                 alt="Made with DALL-E. Prompt: A realistic depiction of the Mars rover Curiosity on the rocky, reddish surface of Mars. In the background, an exaggeratedly large Earth rises on the horizon, dominating the sky with its blue and white appearance, creating a striking contrast against the Martian landscape. The scene captures the moment during Martian dusk, casting long shadows and a warm glow on the rover and the surrounding rocks.">
         </div>

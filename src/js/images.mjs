@@ -40,7 +40,7 @@ export default class ImageList {
 
 function imageTemplate(image) {
   return `<div class="image-card">
-  <a href="${image.img_src}"><img src="${image.img_src}" alt="Photo from Mars rover ${image.rover.name}'s ${image.camera.full_name} Camera"></a>
+  <a href="${image.img_src}"><img src="${image.img_src}" alt="Photo from Mars rover ${image.rover.name}'s ${image.camera.full_name} Camera" loading="lazy"></a>
   <p>${image.camera.full_name}</p>
   </div>`;
 }
