@@ -234,6 +234,7 @@ input {
 }
 
 .image-card img {
+    display: block;
     width: 100%;
     object-fit: contain;
     border-radius: 10px 10px 0 0;

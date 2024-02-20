@@ -14,6 +14,8 @@ addEventListener("load", () => {
   let earth_date = getLocalStorage("earth_date");
 
   new RoverControls(rover, camera, earth_date).init();
+  new Rover(rover).init();
+
   if (rover == null) {
     rover = roverSelect.value;
   }
@@ -23,7 +25,6 @@ addEventListener("load", () => {
   if (earth_date == null) {
     earth_date = earthDateSelect.value;
   }
-  new Rover(rover).init();
 
   roverSelect.addEventListener("change", (event) => {
     new Rover(event.target.value).init();
