@@ -105,6 +105,11 @@ section {
     border-style: solid;
     border-radius: 10px;
     padding: .25rem;
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 5px 5px 10px 5px var(--accent1-color);
 }
 
 section h2 {
