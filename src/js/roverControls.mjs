@@ -20,7 +20,7 @@ export default class RoverControls {
 
     if (this.rovers == null) {
       getData(`https://mars-photos.herokuapp.com/api/v1/rovers/`, (data) => {
-        setLocalStorage("rovers", data.rovers, 300);
+        setLocalStorage("rovers", data.rovers, 9000);
         this.rovers = data.rovers;
         this.renderRovers(this.rovers);
 

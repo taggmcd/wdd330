@@ -14,11 +14,23 @@ addEventListener("load", () => {
   let earth_date = getLocalStorage("earth_date");
 
   new RoverControls(rover, camera, earth_date).init();
+  if (rover == null) {
+    rover = roverSelect.value;
+  }
+  if (camera == null) {
+    camera = cameraSelect.value;
+  }
+  if (earth_date == null) {
+    earth_date = earthDateSelect.value;
+  }
   new Rover(rover).init();
 
   roverSelect.addEventListener("change", (event) => {
     new Rover(event.target.value).init();
   });
+
+  new ImageList(rover, camera, earth_date).init();
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 

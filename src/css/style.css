@@ -212,6 +212,40 @@ input {
     margin: 2rem .5rem;
 }
 
+.image-active {
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: var(--accent2-color);
+    border-radius: 10px;
+    border-style: solid;
+    background-color: var(--accent1-color);
+    transition: box-shadow 0.25s ease-in-out;
+}
+
+.image-card:hover {
+    box-shadow: 5px 5px 10px 5px var(--accent1-color);
+}
+
+.image-card img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px 10px 0 0;
+}
+
+.image-card p {
+    display: block;
+    width: 100%;
+    padding: 0 .5rem;
+    background-color: var(--accent1-color);
+}
+
 @media screen and (min-width: 768px) {
 
     nav {

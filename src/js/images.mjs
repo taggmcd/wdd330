@@ -39,7 +39,10 @@ export default class ImageList {
 }
 
 function imageTemplate(image) {
-  return `<img src="${image.img_src}" alt="Placeholder6">`;
+  return `<div class="image-card">
+  <a href="${image.img_src}"><img src="${image.img_src}" alt="Photo from Mars rover ${image.rover.name}'s ${image.camera.full_name} Camera">
+  <p>${image.camera.full_name}</p></a>
+  </div>`;
 }
 
 function noImageTemplate() {
