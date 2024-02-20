@@ -43,6 +43,7 @@ export default class RoverControls {
   renderRovers(rovers, selected) {
     const parentElement = document.getElementById("rover");
     let options = [];
+    parentElement.innerHTML = "";
     rovers.forEach((rover) => {
       if (rover.name === selected) {
         options.push(

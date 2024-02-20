@@ -1,4 +1,6 @@
 import { loadHeader, loadFooter } from "./utils";
 
-loadHeader();
-loadFooter();
+addEventListener("load", () => {
+  loadHeader();
+  loadFooter();
+});
